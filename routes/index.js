@@ -18,6 +18,7 @@ const { authenticated, authenticatedTweets } = require('../middleware/auth')
 
 router.use('/admin', admin)
 
+
 router.get('/signup', userController.getSignUp)
 router.post('/signup', userController.signUp)
 
@@ -54,6 +55,7 @@ router.post('/tweets/:TweetId/like', authenticated, userController.addLike) // �
 router.post('/tweets/:TweetId/unlike', authenticated, userController.removeLike) // 不喜歡
 
 router.get('/', (req, res) => res.redirect('/tweets')) // 專案初始測試路由
+
 router.use('/', generalErrorHandler)
 
 module.exports = router

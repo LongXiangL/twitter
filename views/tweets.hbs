@@ -1,32 +1,17 @@
-<div id="whole-container" class="container d-flex ">
-  <div id="left-nav" class="col-3">
-    {{> nav tweetsPage=tweets}}
-  {{!-- </div> --}}
-  <div id="mid-tweets" class="col-7">
-    <div id="mid-tweets-content"class="tweet container">
 
-      <div id="tweets-top">
-        <h4 id="home-word"class="pt-3 ps-3">首頁</h4>
-      </div>
-
-     {{!-- 新增推文區 --}}
-      <div id="tweet-post"class="tweetpost ">
-        <div class="avatar d-flex mt-3">
-          <a href="/users/{{user.id}}/tweets" style="text-decoration:none;">
-            <img id="tweet-post-avatar" src="http://i.imgur.com/ehh37fR.jpg"
-              class="rounded-circle me-3">
-          </a>
-          <button id="tweet-post-link" type="button" class="btn"
             data-bs-toggle="modal" data-bs-target="#tweetModal">
             有什麼新鮮事?
           </button>
         </div>
         <div class="button d-flex justify-content-end">
+
           <button id="tweet-post-btn" type="submit" class="btn tweet-button d-flex" data-bs-toggle="modal" data-bs-target="#tweetModal">
             <span id="tweet-post-btn-word">推文</span>
+
           </button>
         </div>
       </div>
+
 
      {{!-- 推文區（依時間排列） --}}
       <div class="tweets container">
@@ -37,10 +22,12 @@
               <img id="tweet-post-avatar"
                 src="{{#if this.User.dataValues.avatar}}{{this.User.dataValues.avatar}}{{else}}/images/users/cover.png{{/if}}"
                 class="rounded-circle me-3">
+
             </a>
           </div>
           <div class="tweet-content">
             <div class="name">
+
               <span id="tweet-name" >{{this.User.dataValues.name}}</span>
               <span id="tweet-account">{{this.User.dataValues.account}}．{{relativeTimeFromNow
               this.createdAt}}</span>
@@ -48,10 +35,12 @@
             <div id="tweet-text-aria"class="content mt-3">
               <a id="tweet-text" href="/tweets/{{this.id}}/replies">
                 {{this.description}}
+
               </a>
             </div>
             <div class="tweetfooter d-flex">
               <div class="replies d-flex align-items-center">
+
                 <button type="button" class="mt-4 mb-4 btn" data-bs-toggle="modal" data-bs-target="#replyModal{{this.id}}">
                   <i class="fa-regular fa-comment"></i>&ensp;{{this.Replies.length}}
                 </button>
@@ -72,10 +61,12 @@
                   </button>
                 </form>
                 {{/if}}
+
               </div>
             </div>
           </div>
         </div>
+
       {{> reply-modal tweets=this user=../user }}
       {{/each}}
       </div>
@@ -86,3 +77,4 @@
   </div>
 </div>
 {{> post-modal}}
+
