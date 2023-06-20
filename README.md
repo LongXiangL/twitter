@@ -92,8 +92,9 @@ Example app listening on port 3000!
 
 
 ### 共同開發人員
+> 
 [Eunice](https://github.com/eunicebibi) 負責部分：推文、回覆功能
-```
+> 
 [HuangYiLun](https://github.com/HuangYiLun)負責部分：後臺管理者功能
-```
+> 
 [LongXiangL](https://github.com/LongXiangL)負責部分：前台使用者、追蹤功能
